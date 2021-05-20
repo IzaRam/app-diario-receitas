@@ -10,6 +10,7 @@ import { ReceitaListComponent } from './receita/receita-list/receita-list.compon
 import { ReceitaComponent } from './receita/receita.component';
 import { ReceitaNewComponent } from './receita/receita-new/receita-new.component';
 import { DespensaComponent } from './despensa/despensa.component';
+import { ReceitaDetailComponent } from './receita/receita-detail/receita-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DespensaComponent } from './despensa/despensa.component';
     ReceitaListComponent,
     ReceitaComponent,
     ReceitaNewComponent,
-    DespensaComponent
+    DespensaComponent,
+    ReceitaDetailComponent
   ],
   imports: [
     BrowserModule,

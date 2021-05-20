@@ -17,6 +17,10 @@ export class ReceitaService {
 	return this.http.get<Receita[]>("http://localhost:8080/api/receitas.php");
   }
 
+  getRecipeById(id: number): Observable<Receita> {
+	return this.http.get<Receita>("http://localhost:8080/api/receitas.php?id=" + id);
+  }
+
   addNewRecipe(receita: Receita): void {
 	this.http.post("http://localhost:8080/api/receitas.php", receita, {responseType: 'text'}).subscribe(response => {
 		console.log(response);

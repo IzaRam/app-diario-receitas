@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ReceitaService } from '../receita.service';
 import { Receita } from '../receita.model';
@@ -12,7 +13,7 @@ export class ReceitaListComponent implements OnInit {
 
 	receitas: Receita[] = [];
 
-	constructor(private receitaService: ReceitaService) {} 
+	constructor(private receitaService: ReceitaService, private router: Router) {} 
 
 	ngOnInit() {
 		this.receitaService.getRecipes().subscribe(receitas => {
@@ -21,7 +22,7 @@ export class ReceitaListComponent implements OnInit {
 	}
 
 	onReceitaSelected(receita: Receita) {
-		console.log(receita);
+		this.router.navigate(['/receitas', receita.id]);
 	}
 
 }
