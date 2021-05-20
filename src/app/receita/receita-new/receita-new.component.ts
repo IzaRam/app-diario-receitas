@@ -18,6 +18,7 @@ export class ReceitaNewComponent implements OnInit {
   addNewRecipe(receita: NgForm) {
 	const recipe = new Receita(0, receita.value.nome, receita.value.imageUrl, receita.value.descricao);
 	this.receitaService.addNewRecipe(recipe);
+	receita.reset();
   }
 
 }
